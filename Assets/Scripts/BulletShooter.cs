@@ -51,12 +51,4 @@ public class BulletShooter : MonoBehaviour
         Destroy(bullet, bulletLifetime);
     }
 
-    // Ví dụ cách gọi hàm bắn bằng chuột trái
-    private void Update()
-    {
-        if (Input.GetButtonDown("Fire1")) // Mặc định là chuột trái
-        {
-            FireBullet();
-        }
-    }
 }
