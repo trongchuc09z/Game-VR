@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d74a755003657fe4eb9e75450702d5ad
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 7834
+  packageName: Sandbags Cover
+  packageVersion: 1
+  assetPath: Assets/Sandbags/Materials/sandbags_all.mat
+  uploadId: 12384

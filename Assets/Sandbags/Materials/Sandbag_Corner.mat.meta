@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bcfe3ffa0cefcef409782e2584efc2a4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 7834
+  packageName: Sandbags Cover
+  packageVersion: 1
+  assetPath: Assets/Sandbags/Materials/Sandbag_Corner.mat
+  uploadId: 12384
