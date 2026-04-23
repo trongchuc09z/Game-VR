@@ -8,6 +8,7 @@ TagManager:
   - SpawnArea
   - Bullet
   - Grenade
+  - Basketball
   layers:
   - Default
   - TransparentFX
