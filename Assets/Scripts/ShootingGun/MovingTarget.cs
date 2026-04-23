@@ -19,7 +19,7 @@ public class MovingTarget : MonoBehaviour
 
     void Update()
     {
-        if (isHit) return; // Bị bắn trúng thì ngừng di chuyển
+        if (isHit) return;
 
         // Di chuyển ngang
         transform.Translate(Vector3.right * moveDirection * speed * Time.deltaTime);
@@ -27,6 +27,10 @@ public class MovingTarget : MonoBehaviour
         // Đảo chiều nếu đi quá giới hạn
         if (Vector3.Distance(startPos, transform.position) >= moveRange)
         {
+            // Ép nó nhích lùi lại vào trong vùng an toàn một chút để không bị kẹt
+            transform.position = Vector3.MoveTowards(transform.position, startPos, 0.05f);
+            
+            // Sau đó mới đảo chiều
             moveDirection *= -1f;
         }
     }

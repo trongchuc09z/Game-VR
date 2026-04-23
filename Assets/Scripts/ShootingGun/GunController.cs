@@ -93,4 +93,10 @@ public class GunController : MonoBehaviour
         if (ammoText != null)
             ammoText.text = $"{currentAmmo} / {maxAmmo}";
     }
+    // Thêm hàm này vào dưới cùng của class GunController
+    public void ResetGun()
+    {
+        currentAmmo = maxAmmo;
+        UpdateAmmoUI();
+    }
 }
