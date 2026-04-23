@@ -10,6 +10,10 @@ public class Grenade : MonoBehaviour
     public float delayTime = 3f;
     public GameObject explosionEffect;
 
+    [Header("Audio Settings")]
+    public AudioClip pickupClip;   // Tiếng lách cách khi nhặt
+    public AudioClip explosionClip; // Tiếng BÙM!
+
     public GameObject floatingText;
 
     private bool isArmed = false;
@@ -24,9 +28,12 @@ public class Grenade : MonoBehaviour
 
     void OnGrabbed(SelectEnterEventArgs args)
     {
-        if (floatingText != null)
+        if (floatingText != null) floatingText.SetActive(false);
+
+        // Phát tiếng nhặt lựu đạn
+        if (pickupClip != null)
         {
-            floatingText.SetActive(false);
+            AudioSource.PlayClipAtPoint(pickupClip, transform.position);
         }
     }
 
@@ -35,18 +42,22 @@ public class Grenade : MonoBehaviour
         if (!isArmed)
         {
             isArmed = true;
-            // Chỉ đếm ngược để nổ, KHÔNG gọi GameManager ở đây nữa [cite: 2]
             Invoke("Explode", delayTime);
         }
     }
 
     void Explode()
     {
-        // SỬA DÒNG NÀY: Lưu hiệu ứng vào biến và tự hủy nó sau 2 giây
         if (explosionEffect != null)
         {
             GameObject fx = Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(fx, 2f);
+        }
+
+        // Phát tiếng nổ siêu to khổng lồ
+        if (explosionClip != null)
+        {
+            AudioSource.PlayClipAtPoint(explosionClip, transform.position, 1f); // 1f là max volume
         }
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);

@@ -21,6 +21,10 @@ public class MiniGameManager : MonoBehaviour
     public GameObject replayButton;
     public GameObject nextButton;
 
+    [Header("Audio Settings")]
+    public AudioClip winClip;
+    public AudioClip loseClip;
+
     [Header("Rules")]
     public int barrelsPerRound = 10;
     public int maxThrows = 3;
@@ -105,7 +109,7 @@ public class MiniGameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"ĐIỂM SỐ: {currentScore} / {winScore}\nLƯỢT NÉM: {currentThrows} / {maxThrows}";
+            scoreText.text = $"SCORE: {currentScore} / {winScore}\nTHROWS: {currentThrows} / {maxThrows}";
         }
     }
 
@@ -119,13 +123,17 @@ public class MiniGameManager : MonoBehaviour
             // Kết thúc game
             if (currentScore >= winScore)
             {
-                scoreText.text += "\n<color=green>THẮNG RỒI!</color>";
+                scoreText.text += "\n<color=green>VICTORY!</color>";
+                if (winClip != null && Camera.main != null)
+                    AudioSource.PlayClipAtPoint(winClip, Camera.main.transform.position);
                 if (nextButton != null) nextButton.SetActive(true);
                 if (replayButton != null) replayButton.SetActive(false);
             }
             else
             {
-                scoreText.text += "\n<color=red>THUA RỒI!</color>";
+                scoreText.text += "\n<color=red>DEFEAT!</color>";
+                if (loseClip != null && Camera.main != null)
+                    AudioSource.PlayClipAtPoint(loseClip, Camera.main.transform.position);
                 if (replayButton != null) replayButton.SetActive(true);
                 if (nextButton != null) nextButton.SetActive(false);
             }

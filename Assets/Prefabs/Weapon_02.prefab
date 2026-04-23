@@ -1212,9 +1212,15 @@ MonoBehaviour:
   firePoint: {fileID: 7667490576414326456}
   bulletSpeed: 200
   maxAmmo: 20
+  useHitscan: 1
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   laserLength: 50
   floatingText: {fileID: 1224305782579952663}
   ammoText: {fileID: 5234736383550325309}
+  pickupClip: {fileID: 8300000, guid: c52696e1dbd6b4749a9afc60c697cb3c, type: 3}
+  shootClip: {fileID: 8300000, guid: 808859620c0b5d34c941ba9a95f4ed6a, type: 3}
 --- !u!1 &6885751693551611049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,15 +1407,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 460000081977212305, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_text
-      value: "Nh\u1EB7t s\xFAng v\xE0 b\u1EAFn m\u1EE5c ti\xEAu"
+      value: Pick up gun and shoot target!
       objectReference: {fileID: 0}
     - target: {fileID: 460000081977212305, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_fontSize
-      value: 200
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 460000081977212305, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_fontSizeBase
-      value: 200
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1993794548852100970, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_Pivot.x

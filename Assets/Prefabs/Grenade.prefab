@@ -420,6 +420,8 @@ MonoBehaviour:
   explosionForce: 700
   delayTime: 3
   explosionEffect: {fileID: 5481530993414605263, guid: 7a12b40fb78f3694ea3ba5830db032b4, type: 3}
+  pickupClip: {fileID: 8300000, guid: 34a2e34b2e2c3444986637c82b575b03, type: 3}
+  explosionClip: {fileID: 8300000, guid: aee0096db160a9a449f94fb4f6bd448e, type: 3}
   floatingText: {fileID: 5134090777787716834}
 --- !u!65 &8963199776829803587
 BoxCollider:
@@ -456,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 460000081977212305, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_text
-      value: "Nh\u1EB7t t\xF4i!"
+      value: Pick me!
       objectReference: {fileID: 0}
     - target: {fileID: 1993794548852100970, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_Pivot.x

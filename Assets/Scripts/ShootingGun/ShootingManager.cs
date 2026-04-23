@@ -24,6 +24,10 @@ public class ShootingManager : MonoBehaviour
     public int maxAmmo = 20;
     public int winScore = 8;
 
+    [Header("Audio Settings")]
+    public AudioClip winClip;
+    public AudioClip loseClip;
+
     private int currentScore = 0;
     private int bulletsFired = 0;
     private int targetsSpawned = 0;
@@ -79,7 +83,7 @@ public class ShootingManager : MonoBehaviour
     void UpdateUI()
     {
         if (scoreBoardText != null)
-            scoreBoardText.text = $"ĐIỂM SỐ: {currentScore} / {winScore}\nSỐ ĐẠN: {maxAmmo - bulletsFired} / {maxAmmo}";
+            scoreBoardText.text = $"SCORE: {currentScore} / {winScore}\nAMMO: {maxAmmo - bulletsFired} / {maxAmmo}";
     }
 
     IEnumerator CheckGameOver()
@@ -90,12 +94,20 @@ public class ShootingManager : MonoBehaviour
         {
             if (currentScore >= winScore)
             {
-                scoreBoardText.text += "\n\n<color=green>ĐẠT CHUẨN!</color>";
+                scoreBoardText.text += "\n\n<color=green>VICTORY!</color>";
                 if (nextButton != null) nextButton.SetActive(true);
+
+                // Tiếng Thắng
+                if (winClip != null && Camera.main != null)
+                    AudioSource.PlayClipAtPoint(winClip, Camera.main.transform.position);
             }
             else
             {
-                scoreBoardText.text += "\n\n<color=red>TRƯỢT!</color>\nYêu cầu bắn lại.";
+                scoreBoardText.text += "\n\n<color=red>DEFEAT!</color>\nPlease try again.";
+
+                // Tiếng Thua
+                if (loseClip != null && Camera.main != null)
+                    AudioSource.PlayClipAtPoint(loseClip, Camera.main.transform.position);
             }
 
             if (replayButton != null) replayButton.SetActive(true);

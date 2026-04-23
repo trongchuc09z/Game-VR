@@ -6,6 +6,9 @@ public class MovingTarget : MonoBehaviour
     public float speed = 2f;
     public float moveRange = 3f; // Khoảng cách di chuyển sang 2 bên
 
+    [Header("Audio Settings")]
+    public AudioClip hitClip; // Tiếng kim loại boong boong khi trúng đạn
+
     private Vector3 startPos;
     private float moveDirection;
     private bool isHit = false;
@@ -41,6 +44,12 @@ public class MovingTarget : MonoBehaviour
             HitByBullet(other.gameObject);
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Bullet"))
+            HitByBullet(other.gameObject);
+    }
+
     public void HitByBullet(GameObject bullet = null)
     {
         if (isHit) return;
@@ -48,6 +57,10 @@ public class MovingTarget : MonoBehaviour
         isHit = true;
         ShootingManager.Instance.AddScore();
         if (bullet != null) Destroy(bullet); // Xóa viên đạn nếu có
+
+        // Phát tiếng bắn trúng cho cả trường hợp trúng bằng hitscan hoặc va chạm vật lý.
+        if (hitClip != null) AudioSource.PlayClipAtPoint(hitClip, transform.position);
+
         StartCoroutine(FallAndRespawn());
     }
 

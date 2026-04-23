@@ -52,6 +52,18 @@ public class GameFlowManager : MonoBehaviour
         {
             CharacterController cc = xrOrigin.GetComponent<CharacterController>();
 
+            // Lấy camera của rig để bù offset khi người chơi di chuyển thật trong không gian VR
+            Transform rigCamera = null;
+            XROrigin origin = xrOrigin.GetComponent<XROrigin>();
+            if (origin != null && origin.Camera != null)
+            {
+                rigCamera = origin.Camera.transform;
+            }
+            else if (Camera.main != null)
+            {
+                rigCamera = Camera.main.transform;
+            }
+
             // Cảnh báo sớm để dễ debug khi điểm spawn đặt đúng bằng vị trí hiện tại.
             if (Vector3.Distance(xrOrigin.transform.position, targetDestination.position) < 0.01f)
             {
@@ -64,14 +76,29 @@ public class GameFlowManager : MonoBehaviour
             // 3. BẮT BUỘC: Chờ hết 1 frame để Unity ghi nhận việc tắt CC
             yield return new WaitForEndOfFrame();
 
-            // 4. Tiến hành bế nhân vật đi
-            xrOrigin.transform.position = targetDestination.position;
-            xrOrigin.transform.rotation = targetDestination.rotation;
+            // 4. Xoay theo hướng điểm đến (chỉ dùng yaw để tránh nghiêng camera)
+            xrOrigin.transform.rotation = Quaternion.Euler(0f, targetDestination.eulerAngles.y, 0f);
 
-            // 5. BẮT BUỘC: Ép Unity đồng bộ vị trí vật lý ngay lập tức
+            // 5. Tiến hành bế nhân vật đi
+            //    Nếu người chơi đã bước lệch trong thế giới thật, Camera sẽ lệch so với gốc rig.
+            //    Ta bù offset (XZ) để Camera/HMD đứng đúng vị trí targetDestination.
+            if (rigCamera != null)
+            {
+                Vector3 cameraOffset = rigCamera.position - xrOrigin.transform.position;
+                Vector3 horizontalOffset = new Vector3(cameraOffset.x, 0f, cameraOffset.z);
+                Vector3 newRigPosition = targetDestination.position - horizontalOffset;
+                newRigPosition.y = targetDestination.position.y;
+                xrOrigin.transform.position = newRigPosition;
+            }
+            else
+            {
+                xrOrigin.transform.position = targetDestination.position;
+            }
+
+            // 6. BẮT BUỘC: Ép Unity đồng bộ vị trí vật lý ngay lập tức
             Physics.SyncTransforms();
 
-            // 6. Bật lại Character Controller
+            // 7. Bật lại Character Controller
             if (cc != null) cc.enabled = true;
         }
         else

@@ -27334,6 +27334,8 @@ MonoBehaviour:
   gunSpawnPoint: {fileID: 691386931}
   maxAmmo: 20
   winScore: 8
+  winClip: {fileID: 8300000, guid: 744257feaa46a324fa10d0a997f12db2, type: 3}
+  loseClip: {fileID: 8300000, guid: 34575961a955c5349b7895c1c948327a, type: 3}
 --- !u!4 &807298083
 Transform:
   m_ObjectHideFlags: 0
@@ -36570,6 +36572,8 @@ MonoBehaviour:
   scoreText: {fileID: 900818751}
   replayButton: {fileID: 1419143738}
   nextButton: {fileID: 486797735}
+  winClip: {fileID: 0}
+  loseClip: {fileID: 0}
   barrelsPerRound: 10
   maxThrows: 3
   winScore: 12
@@ -53719,6 +53723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1914590110}
   - {fileID: 1198840908}
   - {fileID: 30896127}
   - {fileID: 1767928367}
@@ -62143,12 +62148,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914590109}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -26.262417, y: 0, z: -33.91}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -2.8324184, y: -0.7312674, z: 22.874744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1638630970}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1915317406
 PrefabInstance:
@@ -70105,5 +70110,4 @@ SceneRoots:
   - {fileID: 298064989}
   - {fileID: 1638630970}
   - {fileID: 807298083}
-  - {fileID: 1914590110}
   - {fileID: 1855239448}

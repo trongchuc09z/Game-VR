@@ -119,3 +119,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   moveRange: 4
+  hitClip: {fileID: 8300000, guid: 9c84b03989292314bb452660d943263c, type: 3}
