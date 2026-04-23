@@ -14872,7 +14872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3791756129227740756, guid: 8b23e25e5d45a514ab768a618ee1b750, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.01
+      value: -27.491
       objectReference: {fileID: 0}
     - target: {fileID: 3791756129227740756, guid: 8b23e25e5d45a514ab768a618ee1b750, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14880,7 +14880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3791756129227740756, guid: 8b23e25e5d45a514ab768a618ee1b750, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -60.12
+      value: -61.403
       objectReference: {fileID: 0}
     - target: {fileID: 3791756129227740756, guid: 8b23e25e5d45a514ab768a618ee1b750, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22299,6 +22299,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5599113554554142763, guid: 51faba9de6c4dec499159d098b08de3b, type: 3}
   m_PrefabInstance: {fileID: 664873231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &666627546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1346608237131850037, guid: 8b23e25e5d45a514ab768a618ee1b750, type: 3}
+  m_PrefabInstance: {fileID: 438424109}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &668801606
 PrefabInstance:
@@ -36563,6 +36568,8 @@ MonoBehaviour:
   - {fileID: 487576069}
   - {fileID: 639903612}
   scoreText: {fileID: 900818751}
+  replayButton: {fileID: 1419143738}
+  nextButton: {fileID: 486797735}
   barrelsPerRound: 10
   maxThrows: 3
   winScore: 12
@@ -46734,7 +46741,7 @@ Transform:
   m_GameObject: {fileID: 1416902973}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -1.789, z: -2.46}
+  m_LocalPosition: {x: 5.13, y: -1.789, z: -5.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46809,6 +46816,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2117905669173537467, guid: cc3cc80fb4c1ffd4cb6c9a603eebdaf6, type: 3}
   m_PrefabInstance: {fileID: 1416924766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1419143738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1737656521511299767, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
+  m_PrefabInstance: {fileID: 210328820}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1423005527
 PrefabInstance:
@@ -60567,10 +60579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbfb4e7b8805d1488a51526b300bd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xrOrigin: {fileID: 1346608237131850037, guid: 8b23e25e5d45a514ab768a618ee1b750, type: 3}
+  xrOrigin: {fileID: 666627546}
   grenadeSpawnPoint: {fileID: 1416902974}
   shootingSpawnPoint: {fileID: 1083473705}
-  finalSceneName: Scene_KetThuc
+  finalSceneName: Man4
 --- !u!4 &1855239448
 Transform:
   m_ObjectHideFlags: 0

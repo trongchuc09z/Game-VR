@@ -29,7 +29,7 @@ public class MovingTarget : MonoBehaviour
         {
             // Ép nó nhích lùi lại vào trong vùng an toàn một chút để không bị kẹt
             transform.position = Vector3.MoveTowards(transform.position, startPos, 0.05f);
-            
+
             // Sau đó mới đảo chiều
             moveDirection *= -1f;
         }
@@ -37,16 +37,18 @@ public class MovingTarget : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Bullet"))
+            HitByBullet(other.gameObject);
+    }
+
+    public void HitByBullet(GameObject bullet = null)
+    {
         if (isHit) return;
 
-        // Nếu vật chạm vào có Tag là "Bullet"
-        if (other.CompareTag("Bullet"))
-        {
-            isHit = true;
-            ShootingManager.Instance.AddScore();
-            Destroy(other.gameObject); // Xóa viên đạn
-            StartCoroutine(FallAndRespawn());
-        }
+        isHit = true;
+        ShootingManager.Instance.AddScore();
+        if (bullet != null) Destroy(bullet); // Xóa viên đạn nếu có
+        StartCoroutine(FallAndRespawn());
     }
 
     IEnumerator FallAndRespawn()

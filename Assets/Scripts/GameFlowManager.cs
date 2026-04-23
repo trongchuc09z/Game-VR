@@ -1,56 +1,98 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Bắt buộc để chuyển Scene
+using UnityEngine.SceneManagement;
+using System.Collections;
+using Unity.XR.CoreUtils;
 
 public class GameFlowManager : MonoBehaviour
 {
     public static GameFlowManager Instance;
 
     [Header("Player References")]
-    public GameObject xrOrigin; // Kéo XR Origin (VR) vào đây
+    public GameObject xrOrigin;
 
     [Header("Teleport Points")]
-    public Transform grenadeSpawnPoint; // Điểm spawn màn lựu đạn
-    public Transform shootingSpawnPoint; // Điểm dịch chuyển màn bắn súng
+    public Transform grenadeSpawnPoint;
+    public Transform shootingSpawnPoint;
 
     [Header("Scene Names")]
-    public string finalSceneName = "Scene_KetThuc"; // Tên scene tiếp theo sau khi win bắn súng
+    public string finalSceneName = "Scene_KetThuc";
 
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        // Nếu lỡ kéo prefab từ Project vào Inspector, tự tìm XR Origin trong scene đang chạy.
+        if (xrOrigin == null || !xrOrigin.scene.IsValid() || !xrOrigin.scene.isLoaded)
+        {
+            XROrigin sceneXROrigin = FindObjectOfType<XROrigin>();
+            if (sceneXROrigin != null)
+            {
+                xrOrigin = sceneXROrigin.gameObject;
+            }
+        }
     }
 
     void Start()
     {
-        // Khi Scene mới bắt đầu, tự động đưa người chơi về vị trí màn lựu đạn
-        TeleportToGrenade();
+        // Tăng thời gian chờ lên 0.5s để XR Device Simulator khởi động xong hoàn toàn
+        StartCoroutine(TeleportRoutine(0.5f, grenadeSpawnPoint));
     }
 
-    // 1. Hàm dịch chuyển về màn lựu đạn (Giai đoạn bắt đầu)
+    // Tách riêng quy trình dịch chuyển thành một Coroutine để quản lý thời gian
+    private IEnumerator TeleportRoutine(float initialDelay, Transform targetDestination)
+    {
+        // 1. Chờ delay ban đầu (nếu có)
+        if (initialDelay > 0)
+        {
+            yield return new WaitForSeconds(initialDelay);
+        }
+
+        if (xrOrigin != null && targetDestination != null)
+        {
+            CharacterController cc = xrOrigin.GetComponent<CharacterController>();
+
+            // Cảnh báo sớm để dễ debug khi điểm spawn đặt đúng bằng vị trí hiện tại.
+            if (Vector3.Distance(xrOrigin.transform.position, targetDestination.position) < 0.01f)
+            {
+                Debug.LogWarning("[GameFlowManager] Teleport target trung với vị trí hiện tại, nên bạn sẽ thấy như không dịch chuyển.");
+            }
+
+            // 2. Tắt Character Controller
+            if (cc != null) cc.enabled = false;
+
+            // 3. BẮT BUỘC: Chờ hết 1 frame để Unity ghi nhận việc tắt CC
+            yield return new WaitForEndOfFrame();
+
+            // 4. Tiến hành bế nhân vật đi
+            xrOrigin.transform.position = targetDestination.position;
+            xrOrigin.transform.rotation = targetDestination.rotation;
+
+            // 5. BẮT BUỘC: Ép Unity đồng bộ vị trí vật lý ngay lập tức
+            Physics.SyncTransforms();
+
+            // 6. Bật lại Character Controller
+            if (cc != null) cc.enabled = true;
+        }
+        else
+        {
+            Debug.LogWarning("[GameFlowManager] Thiếu tham chiếu xrOrigin hoặc targetDestination, không thể teleport.");
+        }
+    }
+
+    // Các hàm gọi từ nút bấm UI giờ sẽ dùng chung quy trình an toàn ở trên
     public void TeleportToGrenade()
     {
-        if (xrOrigin != null && grenadeSpawnPoint != null)
-        {
-            xrOrigin.transform.position = grenadeSpawnPoint.position;
-            xrOrigin.transform.rotation = grenadeSpawnPoint.rotation;
-        }
+        StartCoroutine(TeleportRoutine(0f, grenadeSpawnPoint));
     }
 
-    // 2. Hàm dịch chuyển sang màn bắn súng (Gắn vào nút Next của màn lựu đạn)
     public void NextToShootingGame()
     {
-        if (xrOrigin != null && shootingSpawnPoint != null)
-        {
-            xrOrigin.transform.position = shootingSpawnPoint.position;
-            xrOrigin.transform.rotation = shootingSpawnPoint.rotation;
-        }
+        StartCoroutine(TeleportRoutine(0f, shootingSpawnPoint));
     }
 
-    // 3. Hàm chuyển sang Scene tiếp theo (Gắn vào nút Next của màn bắn súng)
     public void LoadFinalScene()
     {
-        // Đảm bảo bạn đã thêm Scene vào Build Settings
         SceneManager.LoadScene(finalSceneName);
     }
 }

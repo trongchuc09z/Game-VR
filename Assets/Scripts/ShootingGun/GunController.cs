@@ -11,6 +11,8 @@ public class GunController : MonoBehaviour
     public Transform firePoint;
     public float bulletSpeed = 40f;
     public int maxAmmo = 20; // Số đạn tối đa của súng
+    public bool useHitscan = true; // Bắn trúng ngay theo tia laser để giảm sai số
+    public LayerMask hitMask = ~0;
 
     private int currentAmmo;
 
@@ -46,7 +48,7 @@ public class GunController : MonoBehaviour
         {
             laserLine.SetPosition(0, firePoint.position);
             RaycastHit hit;
-            if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, laserLength))
+            if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, laserLength, hitMask, QueryTriggerInteraction.Collide))
             {
                 laserLine.SetPosition(1, hit.point);
             }
@@ -77,15 +79,40 @@ public class GunController : MonoBehaviour
         currentAmmo--; // Trừ 1 viên đạn
         UpdateAmmoUI(); // Cập nhật chữ trên súng
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        if (rb != null)
+        if (useHitscan)
         {
-            rb.linearVelocity = firePoint.forward * bulletSpeed;
+            RaycastHit hit;
+            if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, laserLength, hitMask, QueryTriggerInteraction.Collide))
+            {
+                MovingTarget target = hit.collider.GetComponentInParent<MovingTarget>();
+                if (target != null)
+                {
+                    target.HitByBullet();
+                }
+            }
+        }
+
+        if (bulletPrefab != null)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+            // Nếu dùng hitscan thì viên đạn chỉ để làm hiệu ứng, tránh tính hit 2 lần.
+            if (useHitscan)
+            {
+                Collider bulletCollider = bullet.GetComponent<Collider>();
+                if (bulletCollider != null) bulletCollider.enabled = false;
+            }
+
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.linearVelocity = firePoint.forward * bulletSpeed;
+            }
+
+            Destroy(bullet, 5f);
         }
 
         ShootingManager.Instance.OnBulletFired(); // Báo cho hệ thống biết đã bắn
-        Destroy(bullet, 5f);
     }
 
     void UpdateAmmoUI()

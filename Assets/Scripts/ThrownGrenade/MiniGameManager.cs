@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 public class MiniGameManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class MiniGameManager : MonoBehaviour
 
     [Header("UI Settings")]
     public TextMeshProUGUI scoreText;
+    public GameObject replayButton;
+    public GameObject nextButton;
 
     [Header("Rules")]
     public int barrelsPerRound = 10;
@@ -38,9 +41,42 @@ public class MiniGameManager : MonoBehaviour
 
     void Start()
     {
+        AutoBindUiButtonsIfMissing();
+
         SpawnBarrels();
         SpawnGrenades();
         UpdateScoreUI();
+
+        if (replayButton != null) replayButton.SetActive(false);
+        if (nextButton != null) nextButton.SetActive(false);
+    }
+
+    private void AutoBindUiButtonsIfMissing()
+    {
+        if (replayButton != null && nextButton != null) return;
+
+        Button[] buttons = FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (Button button in buttons)
+        {
+            if (button == null) continue;
+
+            int eventCount = button.onClick.GetPersistentEventCount();
+            for (int i = 0; i < eventCount; i++)
+            {
+                Object target = button.onClick.GetPersistentTarget(i);
+                string method = button.onClick.GetPersistentMethodName(i);
+
+                if (replayButton == null && target == this && method == nameof(ReplayGame))
+                {
+                    replayButton = button.gameObject;
+                }
+
+                if (nextButton == null && target is GameFlowManager && method == nameof(GameFlowManager.NextToShootingGame))
+                {
+                    nextButton = button.gameObject;
+                }
+            }
+        }
     }
 
     public void AddScore(int points)
@@ -82,9 +118,17 @@ public class MiniGameManager : MonoBehaviour
         {
             // Kết thúc game
             if (currentScore >= winScore)
+            {
                 scoreText.text += "\n<color=green>THẮNG RỒI!</color>";
+                if (nextButton != null) nextButton.SetActive(true);
+                if (replayButton != null) replayButton.SetActive(false);
+            }
             else
+            {
                 scoreText.text += "\n<color=red>THUA RỒI!</color>";
+                if (replayButton != null) replayButton.SetActive(true);
+                if (nextButton != null) nextButton.SetActive(false);
+            }
         }
         else
         {
@@ -157,6 +201,9 @@ public class MiniGameManager : MonoBehaviour
         currentScore = 0;
         currentThrows = 0;
         UpdateScoreUI();
+
+        if (replayButton != null) replayButton.SetActive(false);
+        if (nextButton != null) nextButton.SetActive(false);
 
         // 2. Dừng mọi bộ đếm thời gian đang chạy dở
         StopAllCoroutines();
