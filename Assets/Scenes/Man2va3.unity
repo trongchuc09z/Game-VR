@@ -10774,7 +10774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3392872234297523000, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3392872234297523000, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -10783,10 +10783,22 @@ PrefabInstance:
     - target: {fileID: 3392872234297523000, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 807298081}
+      objectReference: {fileID: 1855239447}
     - target: {fileID: 3392872234297523000, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3392872234297523000, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadFinalScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3392872234297523000, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameFlowManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3392872234297523000, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8555470984387208616, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -63043,7 +63055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.1190186, y: -4.0550385}
+  m_AnchoredPosition: {x: -2.1190186, y: -4.055023}
   m_SizeDelta: {x: 27.373, y: 37.939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2069271115

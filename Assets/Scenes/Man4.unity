@@ -30069,6 +30069,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1737656521511299767, guid: 05d7cafd8dc632244800a792038124c6, type: 3}
   m_PrefabInstance: {fileID: 1172278556}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &562470785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562470786}
+  m_Layer: 0
+  m_Name: Spawnplayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &562470786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562470785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.11, y: 0.26, z: -3.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &566394538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48103,6 +48134,7 @@ MonoBehaviour:
   nextButton: {fileID: 1009326855}
   basketballPrefab: {fileID: 9207082799993752072, guid: 08ba2d3dcdc2a7a449a8afc68f401917, type: 3}
   ballSpawnPoint: {fileID: 21941470}
+  playerSpawnPoint: {fileID: 562470786}
   maxThrows: 5
   winScore: 2
   winClip: {fileID: 8300000, guid: 744257feaa46a324fa10d0a997f12db2, type: 3}
@@ -105342,3 +105374,4 @@ SceneRoots:
   - {fileID: 21941470}
   - {fileID: 1985910541}
   - {fileID: 1172278556}
+  - {fileID: 562470786}

@@ -18,6 +18,9 @@ public class BasketballManager : MonoBehaviour
     public GameObject basketballPrefab;
     public Transform ballSpawnPoint;
 
+    [Header("Player Setup")]
+    public Transform playerSpawnPoint; // Vị trí người chơi cần đứng ném bóng
+
     [Header("Rules")]
     public int maxThrows = 5;
     public int winScore = 2;
@@ -42,6 +45,7 @@ public class BasketballManager : MonoBehaviour
         if (replayButton != null) replayButton.SetActive(false);
         if (nextButton != null) nextButton.SetActive(false);
 
+        StartCoroutine(FixPlayerPosition()); // Ép vị trí người chơi sau khi load 
         SpawnBall();
     }
 
@@ -219,6 +223,42 @@ public class BasketballManager : MonoBehaviour
                 if (nextButton == null && target == this && method == nameof(LoadNextScene))
                     nextButton = button.gameObject;
             }
+        }
+    }
+
+    IEnumerator FixPlayerPosition()
+    {
+        // Chờ 0.2s để XR rig và thiết bị nhận đủ tracking
+        yield return new WaitForSeconds(0.2f);
+        
+        Unity.XR.CoreUtils.XROrigin origin = FindObjectOfType<Unity.XR.CoreUtils.XROrigin>();
+        if (origin != null && playerSpawnPoint != null)
+        {
+            CharacterController cc = origin.GetComponent<CharacterController>();
+            if (cc != null) cc.enabled = false;
+            
+            yield return new WaitForEndOfFrame();
+
+            Transform rigCamera = origin.Camera != null ? origin.Camera.transform : Camera.main.transform;
+            if (rigCamera != null)
+            {
+                // Bù trừ Tracking y hệt như logic ở GameFlowManager của bạn
+                Vector3 cameraOffset = rigCamera.position - origin.transform.position;
+                Vector3 horizontalOffset = new Vector3(cameraOffset.x, 0f, cameraOffset.z);
+                
+                Vector3 newRigPosition = playerSpawnPoint.position - horizontalOffset;
+                newRigPosition.y = playerSpawnPoint.position.y;
+                
+                origin.transform.position = newRigPosition;
+                origin.transform.rotation = Quaternion.Euler(0f, playerSpawnPoint.eulerAngles.y, 0f);
+            }
+            else
+            {
+                origin.transform.position = playerSpawnPoint.position;
+            }
+
+            Physics.SyncTransforms();
+            if (cc != null) cc.enabled = true;
         }
     }
 }
