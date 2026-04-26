@@ -566,7 +566,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139793229}
   m_LocalRotation: {x: 0.00000053644175, y: -0.051848374, z: -0.6977692, w: 0.71444386}
-  m_LocalPosition: {x: 0, y: 0, z: 0.015}
+  m_LocalPosition: {x: 0, y: 0, z: -0.024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -574,7 +574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -4.149, y: -4.26, z: -88.493}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.469, y: -0.905}
+  m_AnchoredPosition: {x: -0.469, y: -0.908}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139793231
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap to equip
+  m_text: "Ch\u1EA1m v\xE0o \u0111\u1EC3 trang b\u1ECB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -606,8 +606,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279892735
+  m_fontColor: {r: 1, g: 0.97943443, b: 0.096226394, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1580,17 +1580,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open the locker to get your workout gear.
+  m_text: "M\u1EDF t\u1EE7 \u0111\u1ED3 \u0111\u1EC3 l\u1EA5y d\u1EE5ng c\u1EE5 t\u1EADp
+    luy\u1EC7n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 711c46962cc28f740b274b968e589858, type: 2}
-  m_sharedMaterial: {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278234367
-  m_fontColor: {r: 1, g: 0.6727273, b: 0, a: 1}
+    rgba: 4279892735
+  m_fontColor: {r: 1, g: 0.97943443, b: 0.096226394, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1677,7 +1678,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2993,17 +2994,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Put the blankets in here.
+  m_text: "\u0110\u1EC3 ch\u0103n m\xE0n v\xE0o \u0111\xE2y"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 711c46962cc28f740b274b968e589858, type: 2}
-  m_sharedMaterial: {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278234367
-  m_fontColor: {r: 1, g: 0.6727273, b: 0, a: 1}
+    rgba: 4279892735
+  m_fontColor: {r: 1, g: 0.97943443, b: 0.096226394, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3090,7 +3091,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4484,9 +4485,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move to the door as instructed.
+  m_text: "Di chuy\u1EC3n ra ph\xEDa c\u1EEDa theo h\u01B0\u1EDBng d\u1EABn"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4494,7 +4495,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278234367
-  m_fontColor: {r: 1, g: 0.6727273, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0.97943443, b: 0.096226394, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4555,7 +4556,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1754504288}
   m_maskType: 0
 --- !u!23 &1754504288
@@ -4641,18 +4642,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Get used to the disciplined lifestyle. Complete your personal quarters
-    arrangement to prepare for the first training session.
+  m_text: "H\xE3y l\xE0m quen v\u1EDBi l\u1ED1i s\u1ED1ng k\u1EF7 lu\u1EADt. Ho\xE0n
+    t\u1EA5t vi\u1EC7c s\u1EAFp x\u1EBFp ch\u1ED7 \u1EDF c\xE1 nh\xE2n \u0111\u1EC3
+    chu\u1EA9n b\u1ECB cho bu\u1ED5i t\u1EADp luy\u1EC7n \u0111\u1EA7u ti\xEAn"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 711c46962cc28f740b274b968e589858, type: 2}
-  m_sharedMaterial: {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278234367
-  m_fontColor: {r: 1, g: 0.6727273, b: 0, a: 1}
+    rgba: 4279892735
+  m_fontColor: {r: 1, g: 0.97943443, b: 0.096226394, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4739,7 +4741,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5210,17 +5212,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Put your belongings away on the bed.
+  m_text: "C\u1EA5t \u0111\u1ED3 \u0111\u1EA1c c\u1EE7a b\u1EA1n l\xEAn gi\u01B0\u1EDDng"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 711c46962cc28f740b274b968e589858, type: 2}
-  m_sharedMaterial: {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278234367
-  m_fontColor: {r: 1, g: 0.6727273, b: 0, a: 1}
+    rgba: 4279892735
+  m_fontColor: {r: 1, g: 0.97943443, b: 0.096226394, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5307,7 +5309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8555197633193524408, guid: 711c46962cc28f740b274b968e589858, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
