@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: 5a2fd170cabec944a8798412933aced0
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VPA_Black_Gloves
+    second: {fileID: 2100000, guid: dbefc093c69eb5f44a9e2357549cbe1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VPA_ar_mag_pouch
+    second: {fileID: 2100000, guid: 2c056b0f58b1e954ea897d67451e239a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ar_mag
+    second: {fileID: 2100000, guid: b4189e6c4d025b047b35eda23fdbab90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base_male_arm_l_skintone_01
+    second: {fileID: 2100000, guid: 14d191505917e6e48838ba2d61ba02e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buckle_master_desert
+    second: {fileID: 2100000, guid: 2737d807cd6999143bd48517d7a50784, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buckle_master_olive
+    second: {fileID: 2100000, guid: d4c928b0b4e86fc46af954ec0a2c1d25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buckle_master_urban
+    second: {fileID: 2100000, guid: 61fda5649ef221543aade89800c71cfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chemlight_a_yellow
+    second: {fileID: 2100000, guid: 685a6507fc350f94da73cd37ed723d6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flash_grenade_01
+    second: {fileID: 2100000, guid: 7437b86bdc002e34b85976c2354dcd2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: head_sc_m_dunn
+    second: {fileID: 2100000, guid: e4655f477c4e6084b9e47192f2a97082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: head_sc_m_dunn_eyes
+    second: {fileID: 2100000, guid: 34dadfce55a65c741bf98d5212af25e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: head_shared_eyelashes
+    second: {fileID: 2100000, guid: 7f9d84f25f04bba408f46637da20b116, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hero_alex_cloth_holster_a_black
+    second: {fileID: 2100000, guid: 50ed65b6172ee7649b7ad42110063afa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hero_alex_hydration_nozzle_a
+    second: {fileID: 2100000, guid: 33260d0f6fb7f3047bc25a86f7824176, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hero_alex_radio_pouch_a
+    second: {fileID: 2100000, guid: 131f2b69ebc8cb041bcd0fc89e01206e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_VPA_1_1_K20_id_pouch.jpg
+    second: {fileID: 2100000, guid: 8a44cd08a37559c4488a329e7d921f1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_VPA_1_1_K20_shirt
+    second: {fileID: 2100000, guid: 1eaba6bdfdc11a141b38f86b46c7a900, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_VPA_1_1_K20_vest
+    second: {fileID: 2100000, guid: 62e7c7f474c444b4f82810430a581d93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_VPA_1_1_balaclava
+    second: {fileID: 2100000, guid: 6af695b24c809c049935e8d61fa84b1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_VPA_1_1_domino_helmet
+    second: {fileID: 2100000, guid: 806a2e17c890cff49ab7881ea73aa18b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_VPA_1_1_k20_basic_helmet
+    second: {fileID: 2100000, guid: f51d63dae2972d342ae79d5033a7c4b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_VPA_K20_pants_tactical_g3
+    second: {fileID: 2100000, guid: 20cd44174ad0f564b80a5df72f1da8a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_ranger_1_1_flash_grenade_pouch
+    second: {fileID: 2100000, guid: 55cfd503d591a8340945aac992b78783, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: milsim_ranger_1_1_parts_belt_dual_molle
+    second: {fileID: 2100000, guid: 755a8c70968fdf04c9fdac676702148e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mp_VPA_black_boots_a
+    second: {fileID: 2100000, guid: a4ef62061e72b544eaa5d6f6f505e206, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mp_yegor_ar_mag_pouch_stencil
+    second: {fileID: 2100000, guid: ef290ff2c1e6cf749be3dbb058f6eb61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pouch_mag_pistol_ghost
+    second: {fileID: 2100000, guid: 320c780ae36e49341b1c2b6fa69353af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: price_ar_mag_pouch_urban
+    second: {fileID: 2100000, guid: 5f7bb385ced306644b3462651280f792, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: price_carabiner_black
+    second: {fileID: 2100000, guid: 74299076e12741f4790a3592e7006bfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ptt_ghost_black
+    second: {fileID: 2100000, guid: a8de2acdb529a8f428da678d38f0294c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: radio
+    second: {fileID: 2100000, guid: 4d8c061bde2902a4285336d04ff43311, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sas_urban_medical_pouch
+    second: {fileID: 2100000, guid: 0f50990e6d36eab47b60d9ec9e633bcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smg_pistol_mag
+    second: {fileID: 2100000, guid: e5bfb75a5c59d8b488a5bcd1eee70ad5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spetsnaz_holster_black
+    second: {fileID: 2100000, guid: 6c8b3f47165d5e74e9d91444470c5a81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: usmc_grenade_pouch_brown
+    second: {fileID: 2100000, guid: 4b7174e5dbe8cc14aafedad3eec95318, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: usmc_grenade_top
+    second: {fileID: 2100000, guid: cb8b60d174c7de7419bd3a0d934c943d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: usmc_headset
+    second: {fileID: 2100000, guid: 0b67c1c7d81972548a6e2600bae7ee72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: usmc_hydration_a
+    second: {fileID: 2100000, guid: 1ca686f5f2dfc5e41bbe8b48709f0f97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: usmc_lmg_kneepad
+    second: {fileID: 2100000, guid: 4b2ed67042e714a44b3c6f40fdcdc93c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wyatt_ar_mag_pouch_black
+    second: {fileID: 2100000, guid: d5df7ffc15c5f1043a74d9dac7db95c1, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.02
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
