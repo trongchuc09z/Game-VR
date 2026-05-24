@@ -136,8 +136,8 @@ public class BasketballManager : MonoBehaviour
         if (scoreBoardText != null)
         {
             scoreBoardText.text += isWin
-                ? "\n\n<color=green>VICTORY!</color>"
-                : "\n\n<color=red>DEFEAT!</color>";
+                ? "\n\n<color=green>CHIẾN THẮNG!</color>"
+                : "\n\n<color=red>THẤT BẠI!</color>";
         }
 
         // Đảm bảo luôn có nút để người chơi thoát/đánh lại
@@ -198,7 +198,7 @@ public class BasketballManager : MonoBehaviour
     void UpdateUI()
     {
         if (scoreBoardText != null)
-            scoreBoardText.text = $"SCORE: {currentScore} / {winScore}\nTHROWS: {currentThrows} / {maxThrows}";
+            scoreBoardText.text = $"ĐIỂM SỐ: {currentScore} / {winScore}\nĐÃ NÉM: {currentThrows} / {maxThrows}";
     }
 
     private void AutoBindUiButtonsIfMissing()

@@ -109,7 +109,7 @@ public class MiniGameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"SCORE: {currentScore} / {winScore}\nTHROWS: {currentThrows} / {maxThrows}";
+            scoreText.text = $"ĐIỂM SỐ: {currentScore} / {winScore}\nĐÃ NÉM: {currentThrows} / {maxThrows}";
         }
     }
 
@@ -123,7 +123,7 @@ public class MiniGameManager : MonoBehaviour
             // Kết thúc game
             if (currentScore >= winScore)
             {
-                scoreText.text += "\n<color=green>VICTORY!</color>";
+                scoreText.text += "\n<color=green>CHIẾN THẮNG!</color>";
                 if (winClip != null && Camera.main != null)
                     AudioSource.PlayClipAtPoint(winClip, Camera.main.transform.position);
                 if (nextButton != null) nextButton.SetActive(true);
@@ -131,7 +131,7 @@ public class MiniGameManager : MonoBehaviour
             }
             else
             {
-                scoreText.text += "\n<color=red>DEFEAT!</color>";
+                scoreText.text += "\n<color=red>THẤT BẠI!</color>";
                 if (loseClip != null && Camera.main != null)
                     AudioSource.PlayClipAtPoint(loseClip, Camera.main.transform.position);
                 if (replayButton != null) replayButton.SetActive(true);

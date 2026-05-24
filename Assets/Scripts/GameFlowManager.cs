@@ -13,6 +13,7 @@ public class GameFlowManager : MonoBehaviour
     [Header("Teleport Points")]
     public Transform grenadeSpawnPoint;
     public Transform shootingSpawnPoint;
+    public Transform mineSpawnPoint; // THÊM DÒNG NÀY: Điểm dịch chuyển màn Dò mìn
 
     [Header("Scene Names")]
     public string finalSceneName = "Scene_KetThuc";
@@ -116,6 +117,12 @@ public class GameFlowManager : MonoBehaviour
     public void NextToShootingGame()
     {
         StartCoroutine(TeleportRoutine(0f, shootingSpawnPoint));
+    }
+
+    // THÊM HÀM NÀY: Gọi khi ấn Next ở màn Bắn súng
+    public void NextToMineGame()
+    {
+        StartCoroutine(TeleportRoutine(0f, mineSpawnPoint));
     }
 
     public void LoadFinalScene()
