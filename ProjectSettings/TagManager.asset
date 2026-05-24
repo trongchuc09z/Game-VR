@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Grenade
   - Basketball
+  - Mine
   layers:
   - Default
   - TransparentFX

@@ -83,7 +83,7 @@ public class ShootingManager : MonoBehaviour
     void UpdateUI()
     {
         if (scoreBoardText != null)
-            scoreBoardText.text = $"SCORE: {currentScore} / {winScore}\nAMMO: {maxAmmo - bulletsFired} / {maxAmmo}";
+            scoreBoardText.text = $"ĐIỂM SỐ: {currentScore} / {winScore}\nĐẠN: {maxAmmo - bulletsFired} / {maxAmmo}";
     }
 
     IEnumerator CheckGameOver()
@@ -94,7 +94,7 @@ public class ShootingManager : MonoBehaviour
         {
             if (currentScore >= winScore)
             {
-                scoreBoardText.text += "\n\n<color=green>VICTORY!</color>";
+                scoreBoardText.text += "\n\n<color=green>CHIẾN THẮNG!</color>";
                 if (nextButton != null) nextButton.SetActive(true);
 
                 // Tiếng Thắng
@@ -103,7 +103,7 @@ public class ShootingManager : MonoBehaviour
             }
             else
             {
-                scoreBoardText.text += "\n\n<color=red>DEFEAT!</color>\nPlease try again.";
+                scoreBoardText.text += "\n\n<color=red>THẤT BẠI!</color>\nVui lòng thử lại.";
 
                 // Tiếng Thua
                 if (loseClip != null && Camera.main != null)
