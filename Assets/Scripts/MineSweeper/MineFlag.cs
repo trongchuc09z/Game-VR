@@ -13,7 +13,7 @@ public class MineFlag : MonoBehaviour
     void Start()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
-        
+
         if (!isDuplicate && grabInteractable != null)
         {
             // Bóp cò (Trigger) để thả một bản sao cờ
@@ -42,11 +42,11 @@ public class MineFlag : MonoBehaviour
             {
                 flagScript.isDuplicate = true;
             }
-            
+
             // Xóa GrabInteractable ở bản sao để nó rơi tự do và không bị cầm nhầm lại
             XRGrabInteractable grab = droppedFlag.GetComponent<XRGrabInteractable>();
             if (grab != null) Destroy(grab);
-            
+
             // Biến mọi Collider thành Trigger để lá cờ đi xuyên qua các vật thể (tránh kẹt)
             Collider[] colliders = droppedFlag.GetComponentsInChildren<Collider>();
             foreach (Collider c in colliders)
@@ -89,7 +89,7 @@ public class MineFlag : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (isPlanted) return;
-        
+
         if (other.CompareTag("Mine") || other.name.Contains("Mine"))
         {
             PlantOnMine(other.gameObject);
@@ -99,10 +99,10 @@ public class MineFlag : MonoBehaviour
         if (isDuplicate)
         {
             // Bỏ qua va chạm với Player, Tay cầm, hoặc lá cờ gốc đang cầm trên tay
-            if (other.CompareTag("Player") || 
-                other.transform.root.name.Contains("XR") || 
+            if (other.CompareTag("Player") ||
+                other.transform.root.name.Contains("XR") ||
                 other.transform.root.name.Contains("VR") ||
-                other.name.Contains("Flag") || 
+                other.name.Contains("Flag") ||
                 other.GetComponent<XRGrabInteractable>() != null)
             {
                 return;
@@ -114,7 +114,7 @@ public class MineFlag : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (isPlanted) return;
-        
+
         if (collision.collider.CompareTag("Mine") || collision.gameObject.name.Contains("Mine"))
         {
             PlantOnMine(collision.collider.gameObject);
@@ -124,10 +124,10 @@ public class MineFlag : MonoBehaviour
         if (isDuplicate)
         {
             // Bỏ qua va chạm với Player, Tay cầm, hoặc lá cờ gốc đang cầm trên tay
-            if (collision.collider.CompareTag("Player") || 
-                collision.transform.root.name.Contains("XR") || 
+            if (collision.collider.CompareTag("Player") ||
+                collision.transform.root.name.Contains("XR") ||
                 collision.transform.root.name.Contains("VR") ||
-                collision.gameObject.name.Contains("Flag") || 
+                collision.gameObject.name.Contains("Flag") ||
                 collision.collider.GetComponent<XRGrabInteractable>() != null)
             {
                 return;
@@ -156,8 +156,8 @@ public class MineFlag : MonoBehaviour
             // Phát âm thanh ghi điểm
             if (plantClip != null) AudioSource.PlayClipAtPoint(plantClip, transform.position);
 
-            // Theo yêu cầu: xóa mìn và xóa cờ
-            Destroy(mineObj);
+            // Cập nhật: chỉ ẩn mìn đi để có thể reset lại khi Replay
+            mineObj.SetActive(false);
             Destroy(gameObject);
         }
     }
