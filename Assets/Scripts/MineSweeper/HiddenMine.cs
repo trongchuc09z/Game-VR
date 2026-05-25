@@ -38,6 +38,6 @@ public class HiddenMine : MonoBehaviour
         }
 
         MineManager.Instance.GameOver(false, "DẪM PHẢI MÌN!");
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
